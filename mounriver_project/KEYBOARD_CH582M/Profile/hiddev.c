@@ -879,8 +879,7 @@ static void hidDevPairStateCB( uint16 connHandle, uint8 state, uint8 status )
   }
 	else if( state == GAPBOND_PAIRING_STATE_BOND_SAVED )
   {
-	  OLED_UI_add_SHOWINFO_task("Bond OK");
-    OLED_UI_add_CANCELINFO_delay_task(2000);
+
   }
 }
 

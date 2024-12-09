@@ -125,14 +125,6 @@ __INTERRUPT
 __HIGH_CODE
 void GPIOB_IRQHandler( void )
 {
-#if (defined HAL_PS2) && (HAL_PS2 == TRUE)
-  PS2_IT_handler();
-#endif
-#if 0
-#if (defined HAL_I2C_TP) && (HAL_I2C_TP == TRUE)
-  I2C_TP_IT_handler();
-#endif
-#endif
 #if (!ROW_SCAN_MODE)
   TP78Reinit(1, g_lp_type);
   GPIOB_ClearITFlagBit(Row_Pin_ALL);  // 用于唤醒

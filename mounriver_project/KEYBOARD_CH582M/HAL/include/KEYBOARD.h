@@ -13,11 +13,11 @@
 
     #include "CH58x_common.h"
 
-    #define Row_GPIO_(x)    GPIOB_ ## x
-    #define Colum_GPIO_(x)  GPIOA_ ## x
+    #define Row_GPIO_(x)    GPIOA_ ## x
+    #define Colum_GPIO_(x)  GPIOB_ ## x
 
-    #define ROW_SIZE        6    // 键盘行数 - 其它键盘布局需修改此处
-    #define COL_SIZE        14   // 键盘列数 - 其它键盘布局需修改此处
+    #define ROW_SIZE        5    // 键盘行数 - 其它键盘布局需修改此处
+    #define COL_SIZE        6   // 键盘列数 - 其它键盘布局需修改此处
 
     #define MAX_PRESS_COUNT       15    // 8个特殊键+6个一般键+1个Fn键
     #define MAX_CHANGETIMES       24    // 按下Capslock改变键盘布局检测次数
@@ -166,20 +166,20 @@
     #define Fn_Mode_RFJumptoBoot          0xB2
     #define Fn_Mode_VolumeUp              0xC0
     #define Fn_Mode_VolumeDown            0xC1
-    #define Fn_Mode_DisEnableTP           0xD0
+    // #define Fn_Mode_DisEnableTP           0xD0
     #define Fn_Mode_PriorityUSBorBLE      0xE0
     #define Fn_Mode_SelectDevice1         0xE1
     #define Fn_Mode_SelectDevice2         0xE2
     #define Fn_Mode_SelectDevice3         0xE3
     #define Fn_Mode_SelectDevice4         0xE4  // Mode SaveAddr-SelectDevice4需连续
     #define Fn_Mode_BLE_ClearSNV          0xEF
-    #define Fn_Mode_LED_Style1            0xF0
-    #define Fn_Mode_LED_Style2            0xF1
-    #define Fn_Mode_LED_Style3            0xF2
-    #define Fn_Mode_LED_Style4            0xF3
-    #define Fn_Mode_LED_Style5            0xF4
-    #define Fn_Mode_LED_Style6            0xF5
-    #define Fn_Mode_PaintedEgg            0xFE
+    // #define Fn_Mode_LED_Style1            0xF0
+    // #define Fn_Mode_LED_Style2            0xF1
+    // #define Fn_Mode_LED_Style3            0xF2
+    // #define Fn_Mode_LED_Style4            0xF3
+    // #define Fn_Mode_LED_Style5            0xF4
+    // #define Fn_Mode_LED_Style6            0xF5
+    // #define Fn_Mode_PaintedEgg            0xFE
     #define Fn_Mode_GiveUp                0xFF
 
     typedef struct _Keyboard_Status_t {

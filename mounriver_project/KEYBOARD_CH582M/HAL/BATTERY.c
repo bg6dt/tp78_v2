@@ -120,41 +120,23 @@ static UINT8 BATTERY_ADC_GetLevel( UINT32 adc_val )
  * Input          : None
  * Return         : None
  *******************************************************************************/
-void BATTERY_DrawBMP( void )
-{
-  static BOOL BAT_LAST_CHARGING = FALSE;
-  const UINT8 BMP_StartX = 91;
-  UINT8 i, j;
-  UINT8 BAT_level = BATTERY_ADC_GetLevel(BAT_adcVal);
-#ifdef OLED_0_91
-  BOOL isFloating = ABS((long)BAT_adcHistory - (long)BAT_adcVal) >= BAT_FLOATING_VAL;
-#endif
+// void BATTERY_DrawBMP( void )
+// {
+//   static BOOL BAT_LAST_CHARGING = FALSE;
+//   const UINT8 BMP_StartX = 91;
+//   UINT8 i, j;
+//   UINT8 BAT_level = BATTERY_ADC_GetLevel(BAT_adcVal);
 
-  if (!BAT_IS_CHARGING) { // 当前处于不充电状态
-    if (BAT_LAST_CHARGING) {  // 退出充电
-      BAT_LAST_CHARGING = FALSE;
-      OLED_UI_add_default_task(OLED_UI_FLAG_BAT_CLR_CHARGE);
-      OLED_UI_add_default_task(OLED_UI_FLAG_BAT_LEVEL_1 + BAT_level);
-    } else if (BATTERY_ADC_GetLevel(BAT_adcHistory) != BAT_level) OLED_UI_add_default_task(OLED_UI_FLAG_BAT_LEVEL_1 + BAT_level);  // 电量等级变化
-  } else {
-    if (!BAT_LAST_CHARGING) { // 进入充电
-      BAT_LAST_CHARGING = TRUE;
-      OLED_UI_add_default_task(OLED_UI_FLAG_BAT_CHARGE);
-    }
-  }
-#ifdef OLED_0_91
-  // 无论电量等级是否变化都给出电量是否浮动
-  if ( isFloating ) {
-    OLED_Set_Pos(BMP_StartX + 29, 0);
-    OLED_WR_Byte(0xE1, OLED_DATA);
-    OLED_WR_Byte(0x0B, OLED_DATA);
-  } else {
-    OLED_Set_Pos(BMP_StartX + 29, 0);
-    OLED_WR_Byte(0xE0, OLED_DATA);
-    OLED_WR_Byte(0x00, OLED_DATA);
-  }
-  // 无论电量等级是否变化都输出ADC值
-  OLED_Set_Pos(BMP_StartX + 4, 3);
-  OLED_ShowNum(BMP_StartX + 4, 3, BAT_adcVal, 4);
-#endif
-}
+//   if (!BAT_IS_CHARGING) { // 当前处于不充电状态
+//     if (BAT_LAST_CHARGING) {  // 退出充电
+//       BAT_LAST_CHARGING = FALSE;
+//       OLED_UI_add_default_task(OLED_UI_FLAG_BAT_CLR_CHARGE);
+//       OLED_UI_add_default_task(OLED_UI_FLAG_BAT_LEVEL_1 + BAT_level);
+//     } else if (BATTERY_ADC_GetLevel(BAT_adcHistory) != BAT_level) OLED_UI_add_default_task(OLED_UI_FLAG_BAT_LEVEL_1 + BAT_level);  // 电量等级变化
+//   } else {
+//     if (!BAT_LAST_CHARGING) { // 进入充电
+//       BAT_LAST_CHARGING = TRUE;
+//       OLED_UI_add_default_task(OLED_UI_FLAG_BAT_CHARGE);
+//     }
+//   }
+// }

@@ -72,20 +72,13 @@ typedef union {
 #include "RTC.h"
 #include "SLEEP.h"	
 #include "LED.h"
-#include "KEY.h"
+//#include "KEY.h"
 #include "BLE.h"
 #include "FATFS.h"
 #include "USB.h"
-#include "PS2.h"
-#include "HW_I2C.h"
-#include "I2C_TP.h"
-#include "MPR121.h"
-#include "OLED.h"
-#include "OLED_UI.h"
 #include "RF_PHY.h"
 #include "KEYBOARD.h"
 #include "BATTERY.h"
-#include "WS2812.h"
 #include "LIGHTMAP.h"
 #include "CORE.h"
 
@@ -253,17 +246,14 @@ extern uint32_t sys_time;
 uint8_t OnBoard_SendMsg(uint8_t registeredTaskID, uint8 event, uint8 state, void *data);
 
 void HID_KEYBOARD_Process( void );
-void HID_PS2TP_Process( void );
-void HID_I2CTP_Process( void );
-void HID_CapMouse_Process( void );
+
+
+
 void HID_VOL_Process( void );
-void SW_PaintedEgg_Process( void );
-void SW_OLED_LEDStatus_Process( void );
-void SW_OLED_UBStatus_Process( void );
+// void SW_OLED_LEDStatus_Process( void );
+// void SW_OLED_UBStatus_Process( void );
 void HW_Battery_Process( void );
-void HW_WS2812_Process( void );
-void HW_MODULE_DEMO_Process( void );
-void HW_TouchBar_Process( void );
+
 
 extern void FLASH_Init( void );
 extern void HAL_Init( void );

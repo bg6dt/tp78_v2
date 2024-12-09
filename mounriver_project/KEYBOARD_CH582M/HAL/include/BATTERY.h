@@ -39,7 +39,7 @@
   void BATTERY_DMA_ENABLE( void );
   void BATTERY_ADC_Convert( void );
   void BATTERY_ADC_Calculation( void );
-  void BATTERY_DrawBMP( void );
+  // void BATTERY_DrawBMP( void );
 
   extern UINT16 BAT_abcBuff[ADC_MAXBUFLEN];
   extern UINT32 BAT_adcVal;

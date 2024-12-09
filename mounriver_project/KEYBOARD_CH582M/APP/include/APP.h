@@ -13,7 +13,6 @@
 
 #include "CH58x_common.h"
 #include <string.h>
-#include "snake.h"
 #include "tp78_via.h"
 
 #endif

@@ -81,7 +81,7 @@
 #define BLE_DIAL                    TRUE
 #endif
 #ifndef DCDC_ENABLE
-#define DCDC_ENABLE                 FALSE
+#define DCDC_ENABLE                 TRUE
 #endif
 #ifndef HAL_SLEEP
 #define HAL_SLEEP                   TRUE
@@ -101,48 +101,21 @@
 #ifndef HAL_USB
 #define HAL_USB                     TRUE            // USB
 #endif
-#ifndef TP_Reverse
-#define TP_Reverse                  TRUE            // 小红点是否反转
-#endif
-#ifndef HAL_PS2
-#define HAL_PS2                     FALSE           // PS/2小红点
-#endif
+
+
 #ifndef HAL_KEYBOARD
 #define HAL_KEYBOARD                TRUE            // 键盘
 #endif
-#ifndef HAL_OLED
-#define HAL_OLED                    TRUE            // OLED
-#endif
+
 #ifndef HAL_BATTADC
 #define HAL_BATTADC                 TRUE            // 电池ADC
 #endif
-#ifndef HAL_WS2812_PWM
-#define HAL_WS2812_PWM              TRUE            // WS2812 PWM驱动
-#endif
-#ifndef HAL_MOTOR
-#define HAL_MOTOR                   TRUE            // 震动马达
-#endif
+
 #ifndef HAL_RF
 #define HAL_RF                      TRUE            // RF 2.4G
 #endif
-#ifndef HAL_HW_I2C
-#define HAL_HW_I2C                  TRUE            // 硬件I2C
-#endif
-#ifndef SW_PAINTEDEGG
-#define SW_PAINTEDEGG               TRUE            // 彩蛋
-#endif
-#ifndef HAL_I2C_TP
-#define HAL_I2C_TP                  TRUE            // I2C小红点
-#endif
-#ifndef HAL_MPR121_CAPMOUSE
-#define HAL_MPR121_CAPMOUSE         FALSE           // MPR121触摸板 - 注意：修改此处还需同步库文件修改
-#endif
-#ifndef HAL_MPR121_TOUCHBAR
-#define HAL_MPR121_TOUCHBAR         TRUE            // MPR121触摸条 - 注意：修改此处还需同步库文件修改
-#endif
-#ifndef HAL_TPM
-#define HAL_TPM                     TRUE            // 扩展模块
-#endif
+
+
 #ifndef TEM_SAMPLE
 #define TEM_SAMPLE                  TRUE            // 温度采样
 #endif
@@ -193,7 +166,7 @@
 #define CENTRAL_MAX_CONNECTION      3
 #endif
 
-#ifdef HAL_OLED
+#if (defined HAL_OLED) && (HAL_OLED == TRUE)
 #define OLED_PRINT(X...)            OLED_UI_printf(X)
 #else
 #define OLED_PRINT(X...)
